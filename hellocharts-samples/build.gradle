@@ -2,9 +2,9 @@ apply plugin: 'com.android.application'
 
 dependencies {
     //compile fileTree(dir: 'libs', include: '*.jar')
-    compile project(':hellocharts-library')
-    compile 'com.android.support:support-v4:23.3.0'
-    compile 'com.android.support:appcompat-v7:23.3.0'
+    implementation project(':hellocharts-library')
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
 }
 
 android {
@@ -40,9 +40,18 @@ android {
             minifyEnabled false
 			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 		}
+
+    debug {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
 	}
 
 	lintOptions {
 		abortOnError false
 	}
+}
+
+repositories {
+  google()
 }
